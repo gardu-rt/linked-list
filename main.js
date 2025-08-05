@@ -10,6 +10,8 @@ list.append("hamster");
 list.append("snake");
 list.append("turtle");
 
-console.log(list.pop());
+console.log(list.contains("hamster"));
+console.log(list.contains("david"));
+console.log(list.contains("snake"));
 
 console.log(list);
