@@ -39,4 +39,27 @@ export default class LinkedList {
 
     this.length++;
   }
+
+  size() {
+    return this.length;
+  }
+
+  head() {
+    return this.head;
+  }
+
+  at(index) {
+    if (index < 0 || index > this.length) {
+      throw new Error("index out of range");
+    }
+    let count = 0;
+    let current = this.head;
+
+    while (count < index) {
+      current = current.next;
+      count++;
+    }
+
+    return current;
+  }
 }
