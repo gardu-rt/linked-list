@@ -7,8 +7,9 @@ list.append("dog");
 list.append("cat");
 list.append("parrot");
 list.append("hamster");
-list.append("snake");
+// list.append("snake");
 list.append("turtle");
+list.insertAt("snake", 4);
 
 console.log(list.find("hamster"));
 console.log(list.find("david"));

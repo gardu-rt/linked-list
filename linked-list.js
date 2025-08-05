@@ -72,6 +72,7 @@ export default class LinkedList {
 
     prev.next = null;
     this.tail = prev;
+    this.length--;
     return current;
   }
 
@@ -112,5 +113,25 @@ export default class LinkedList {
     }
 
     return text + "null";
+  }
+
+  insertAt(value, index) {
+    if (index < 0 || index > this.length) throw new Error("index out of range");
+    if (index === 0) {
+      this.prepend(value);
+    }
+    let count = 1;
+    let prev = this.head;
+    let node = prev.next;
+
+    while (count < index) {
+      prev = node;
+      node = prev.next;
+      count++;
+    }
+
+    let newNode = new Node(value);
+    prev.next = newNode;
+    newNode.next = node;
   }
 }
