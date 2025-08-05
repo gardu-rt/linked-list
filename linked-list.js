@@ -40,14 +40,6 @@ export default class LinkedList {
     this.length++;
   }
 
-  size() {
-    return this.length;
-  }
-
-  head() {
-    return this.head;
-  }
-
   at(index) {
     if (index < 0 || index > this.length) {
       throw new Error("index out of range");
@@ -60,6 +52,26 @@ export default class LinkedList {
       count++;
     }
 
+    return current;
+  }
+
+  pop() {
+    if (!this.head) throw new Error("can't read null properties");
+    if (this.head.next === null) {
+      this.head = null;
+      this.tail = this.head;
+    }
+
+    let prev = this.head;
+    let current = prev.next;
+
+    while (current.next) {
+      prev = current;
+      current = current.next;
+    }
+
+    prev.next = null;
+    this.tail = prev;
     return current;
   }
 }
