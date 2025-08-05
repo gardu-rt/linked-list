@@ -86,4 +86,18 @@ export default class LinkedList {
 
     return false;
   }
+
+  find(value) {
+    if (!this.head) throw new Error("can't read null property");
+
+    let node = this.head;
+    let index = 0;
+    while (node) {
+      if (value === node.value) return index;
+      node = node.next;
+      index++;
+    }
+
+    return null;
+  }
 }
