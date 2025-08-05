@@ -100,4 +100,17 @@ export default class LinkedList {
 
     return null;
   }
+
+  toString() {
+    if (!this.head) return null;
+
+    let text = "";
+    let node = this.head;
+    while (node) {
+      text += `( ${node.value} ) -> `;
+      node = node.next;
+    }
+
+    return text + "null";
+  }
 }

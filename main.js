@@ -13,5 +13,6 @@ list.append("turtle");
 console.log(list.find("hamster"));
 console.log(list.find("david"));
 console.log(list.contains("snake"));
+console.log(list.toString());
 
 console.log(list);
