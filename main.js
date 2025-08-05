@@ -10,6 +10,7 @@ list.append("hamster");
 // list.append("snake");
 list.append("turtle");
 list.insertAt("snake", 4);
+list.removeAt(0);
 
 console.log(list.find("hamster"));
 console.log(list.find("david"));

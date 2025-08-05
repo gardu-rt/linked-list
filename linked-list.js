@@ -134,4 +134,24 @@ export default class LinkedList {
     prev.next = newNode;
     newNode.next = node;
   }
+
+  removeAt(index) {
+    if (index < 0 || index > this.length) throw new Error("index out of range");
+    if (index === 0) {
+      this.head = this.head.next;
+      return;
+    }
+
+    let count = 1;
+    let prev = this.head;
+    let node = prev.next;
+
+    while (count < index) {
+      prev = node;
+      node = prev.next;
+      count++;
+    }
+
+    prev.next = node.next;
+  }
 }
